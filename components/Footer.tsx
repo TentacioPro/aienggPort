@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
                                 </svg>
                             </a>
                             <a
-                                href="https://github.com/abishek-m"
+                                href="https://github.com/TentacioPro"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-2 rounded-lg transition-all duration-300 hover:shadow-lg"
@@ -137,7 +137,7 @@ const Footer: React.FC = () => {
                                 </svg>
                             </a>
                             <a
-                                href="https://linkedin.com/in/abishek-m"
+                                href="https://linkedin.com/in/abishek-maharajan"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-2 rounded-lg transition-all duration-300 hover:shadow-lg"

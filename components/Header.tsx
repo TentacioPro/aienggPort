@@ -76,7 +76,7 @@ const Header: React.FC = () => {
                 >
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3 flex items-center justify-between">
                         <a
-                            href="https://abishek-maharajan.online"
+                            href="https://sajjadismail.github.io/Profile/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-xs sm:text-sm font-semibold transition-all duration-300 hover:opacity-80"
@@ -114,7 +114,7 @@ const Header: React.FC = () => {
             >
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16 md:h-20">
-                        <a href="/" className="text-lg sm:text-xl font-bold transition-colors" style={{ 
+                        <a href="#hero" className="text-lg sm:text-xl font-bold transition-colors" style={{ 
                             color: `var(--accent-color)`,
                             opacity: 0.9 
                         }}>
