@@ -1,0 +1,9 @@
+/* Tailwind entry (required when using Tailwind with Vite) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Small helpers to keep the site's look consistent */
+html, body {
+  height: 100%;
+}
