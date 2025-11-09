@@ -49,7 +49,7 @@ const Experience: React.FC = () => {
         <Section id="experience" title="Where I've Worked">
             <div className="relative">
                 {/* Vertical Timeline Bar */}
-                <div ref={timelineRef} className="timeline-line absolute left-4 md:left-1/2 top-2 h-full w-0.5 bg-[#6F00FF] transform-origin-top scale-y-0"></div>
+                <div ref={timelineRef} className="timeline-line absolute left-4 md:left-1/2 top-2 h-full w-0.5 transform-origin-top scale-y-0" style={{ backgroundColor: `var(--accent-color)` }}></div>
                 
                 <div className="relative">
                     {EXPERIENCE.map((item: ExperienceItem, index: number) => {
@@ -62,19 +62,30 @@ const Experience: React.FC = () => {
                             <div className={`flex items-center flex-col md:flex-row ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
                                 <div className="md:w-5/12"> {/* Left/Right Spacer on desktop */} </div>
                                 <div className="w-2/12 hidden md:flex justify-center">
-                                    <div className="h-4 w-4 rounded-full bg-[#E9B3FB] border-4 border-[#FFF1F1] ring-2 ring-[#6F00FF]"></div>
+                                    <div className="h-4 w-4 rounded-full border-4" style={{ 
+                                        backgroundColor: `var(--accent-color)`,
+                                        borderColor: `var(--bg-color)`,
+                                        boxShadow: `0 0 0 2px var(--accent-color)`
+                                    }}></div>
                                 </div>
                                 <div className="w-full md:w-5/12 relative pl-10 md:pl-0">
-                                    <div className="absolute left-4 top-1 h-4 w-4 rounded-full bg-[#E9B3FB] border-4 border-[#FFF1F1] ring-2 ring-[#6F00FF] -translate-x-1/2 md:hidden"></div>
-                                    <div className="p-6 bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                                        <h3 className={`text-xl font-bold text-[#3B0270] mb-1 ${index % 2 !== 0 ? 'md:text-right' : ''}`}>
+                                    <div className="absolute left-4 top-1 h-4 w-4 rounded-full border-4 -translate-x-1/2 md:hidden" style={{ 
+                                        backgroundColor: `var(--accent-color)`,
+                                        borderColor: `var(--bg-color)`,
+                                        boxShadow: `0 0 0 2px var(--accent-color)`
+                                    }}></div>
+                                    <div className="p-6 rounded-lg border shadow-sm hover:shadow-md transition-shadow" style={{ 
+                                        backgroundColor: `color-mix(in srgb, var(--bg-color) 50%, var(--accent-color) 5%)`,
+                                        borderColor: `var(--border-color)`
+                                    }}>
+                                        <h3 className={`text-xl font-bold mb-1 ${index % 2 !== 0 ? 'md:text-right' : ''}`} style={{ color: `var(--text-color)` }}>
                                             <span>{item.role}</span>
-                                            <span className="text-[#6F00FF]">&nbsp;@&nbsp;
+                                            <span style={{ color: `var(--accent-color)` }}>&nbsp;@&nbsp;
                                                 <a href={item.companyUrl} target="_blank" rel="noreferrer noopener" className="hover:underline focus:underline">{item.company}</a>
                                             </span>
                                         </h3>
-                                        <p className={`text-sm font-semibold text-[#3B0270]/60 mb-4 ${index % 2 !== 0 ? 'md:text-right' : ''}`}>{item.duration}</p>
-                                        <ul className={` pl-5 space-y-2 text-[#3B0270]/80 text-sm ${index % 2 !== 0 ? 'md:text-right md:list-none md:pl-0' : ''}`}>
+                                        <p className={`text-sm font-semibold mb-4 ${index % 2 !== 0 ? 'md:text-right' : ''}`} style={{ color: `var(--secondary-text)` }}>{item.duration}</p>
+                                        <ul className={` pl-5 space-y-2 text-sm ${index % 2 !== 0 ? 'md:text-right md:list-none md:pl-0' : ''}`} style={{ color: `var(--secondary-text)` }}>
                                             {item.responsibilities.map((resp, i) => (<li key={i}>{resp}</li>))}
                                         </ul>
                                     </div>

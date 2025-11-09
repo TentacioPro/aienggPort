@@ -3,7 +3,167 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Small helpers to keep the site's look consistent */
-html, body {
+/* ========================================
+   CSS Variables for Dynamic Theme System
+   ======================================== */
+
+/* Default: Tech theme + Dark mode */
+:root {
+  --primary-font: 'Inter', sans-serif;
+  --accent-color: #00A9FF;
+  --bg-color: #111111;
+  --text-color: #F5F5F5;
+  --secondary-text: #AAAAAA;
+  --border-color: #333333;
+  color-scheme: dark;
+}
+
+/* Light mode overrides */
+:root.mode-light {
+  --bg-color: #F5F5F5;
+  --text-color: #111111;
+  --secondary-text: #555555;
+  --border-color: #E0E0E0;
+  color-scheme: light;
+}
+
+/* Tech theme (default) */
+:root.theme-tech {
+  --primary-font: 'Inter', sans-serif;
+  --accent-color: #00A9FF;
+}
+
+/* Bold theme */
+:root.theme-bold {
+  --primary-font: 'Montserrat', sans-serif;
+  --accent-color: #CC0000;
+}
+
+/* Industrial theme */
+:root.theme-industrial {
+  --primary-font: 'Exo 2', sans-serif;
+  --accent-color: #FF6600;
+}
+
+/* ========================================
+   Force ALL elements to use CSS variables
+   ======================================== */
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+html {
   height: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--primary-font);
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--primary-font);
+}
+
+/* Ensure all text content uses theme variables */
+p, span, li, dd, dt, figcaption, code, pre {
+  color: inherit;
+  font-family: var(--primary-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: inherit;
+  font-family: var(--primary-font);
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Buttons & interactive elements */
+button {
+  font-family: var(--primary-font);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Form inputs */
+input, textarea, select {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+  font-family: var(--primary-font);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--secondary-text);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
+}
+
+/* Accent-colored elements */
+.accent-text {
+  color: var(--accent-color);
+}
+
+.accent-bg {
+  background-color: var(--accent-color);
+}
+
+.accent-border {
+  border-color: var(--accent-color);
+}
+
+.theme-btn {
+  font-family: var(--primary-font);
+}
+
+/* Gradients using accent color */
+.accent-gradient {
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-color) 80%, transparent);
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--accent-color);
+  color: white;
 }

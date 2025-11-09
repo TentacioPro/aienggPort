@@ -1,0 +1,20 @@
+This is a placeholder resume file for demo purposes.
+
+Name: [Redacted]
+Title: Software Engineer (Anonymized)
+
+Summary:
+- Experienced in building practical machine learning systems and frontend applications.
+- Skilled in model fine-tuning, retrieval-augmented generation, and building production-ready user interfaces.
+
+Experience:
+- Company A — AI Engineer (Oct 2024 — Nov 2025)
+- Company B — AI Engineer (Feb 2024 — Aug 2024)
+
+Education:
+- Degree: Computer Science (Institution redacted)
+
+Contact:
+- Email: [redacted@example.com]
+
+This file is intentionally anonymized for privacy and demo use.

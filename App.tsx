@@ -6,9 +6,15 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { initializeTheme } from './src/utils/theme';
 
 const App: React.FC = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    useEffect(() => {
+        // Initialize theme on app mount
+        initializeTheme();
+    }, []);
 
     useEffect(() => {
         const handleMouseMove = (event: MouseEvent) => {

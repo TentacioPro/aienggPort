@@ -14,25 +14,33 @@ const Projects: React.FC = () => {
         <Section id="projects" title="Projects">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                 {PROJECTS.map((project, index) => (
-                        <div key={index} className="flex flex-col bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-md hover:border-slate-300">
+                        <div key={index} className="flex flex-col rounded-lg shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-md" style={{
+                            backgroundColor: `var(--bg-color)`,
+                            borderColor: `var(--border-color)`
+                        }}>
                             <div className="relative w-full h-48 overflow-hidden">
                                 <img alt={project.title} loading="lazy" width="400" height="250" decoding="async" className="w-full h-full object-cover" src={project.imageUrl} />
                                 {/* Color mask overlay to blend with background */}
-                                <div className="absolute inset-0 bg-[#FFF1F1]/40 mix-blend-multiply"></div>
+                                <div className="absolute inset-0 mix-blend-multiply" style={{ backgroundColor: `color-mix(in srgb, var(--bg-color) 40%, transparent)` }}></div>
                                 {/* Blur overlay for softer appearance */}
-                                <div className="absolute inset-0 backdrop-blur-[0.5px] bg-[#E9B3FB]/10"></div>
+                                <div className="absolute inset-0 backdrop-blur-[0.5px]" style={{ backgroundColor: `color-mix(in srgb, var(--accent-color) 10%, transparent)` }}></div>
                             </div>
                             <div className="p-6 flex flex-col flex-grow">
-                                <h3 className="text-xl font-bold text-[#3B0270] mb-2">{project.title}</h3>
-                                <p className="text-sm text-[#3B0270]/80 mb-4 flex-grow">{project.description}</p>
+                                <h3 className="text-xl font-bold mb-2" style={{ color: `var(--accent-color)` }}>{project.title}</h3>
+                                <p className="text-sm mb-4 flex-grow" style={{ color: `var(--secondary-text)` }}>{project.description}</p>
                                 <ul className="flex flex-wrap gap-2 mb-4">
                                     {project.tags.map(tag => (
-                                        <li key={tag} className="flex items-center rounded-md bg-[#E9B3FB]/50 px-3 py-1 text-xs font-medium leading-5 text-[#3B0270]">{tag}</li>
+                                        <li key={tag} className="flex items-center rounded-md px-3 py-1 text-xs font-medium leading-5" style={{
+                                            backgroundColor: `color-mix(in srgb, var(--accent-color) 20%, transparent)`,
+                                            color: `var(--accent-color)`,
+                                            borderColor: `var(--border-color)`,
+                                            borderWidth: '1px'
+                                        }}>{tag}</li>
                                     ))}
                                 </ul>
                                 <div className="flex items-center gap-4 mt-auto">
                                     {project.githubUrl && (
-                                        <a href={project.githubUrl} target="_blank" rel="noreferrer" className="text-[#3B0270]/70 hover:text-[#6F00FF] transition-colors" aria-label="GitHub repository">
+                                        <a href={project.githubUrl} target="_blank" rel="noreferrer" className="transition-colors" style={{ color: `var(--secondary-text)` }} aria-label="GitHub repository">
                                             <GithubIcon />
                                         </a>
                                     )}

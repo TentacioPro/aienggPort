@@ -4,6 +4,9 @@ import React from 'react';
 // Import project images
 import deepPulseImg from './assets/DeepPulse.webp';
 import skyMarineImg from './assets/Sky Marine Services.png';
+import grokAIImg from './assets/Grok-AI.jpg';
+import cybertruckImg from './assets/Cybertruck.jpg';
+import starshipImg from './assets/Starship.webp';
 
 // Python Icon
 const PythonIcon: React.FC<{ className?: string }> = ({ className = "h-5 w-5" }) => (
@@ -83,6 +86,41 @@ const ChartBarIcon: React.FC<{ className?: string }> = ({ className = "h-5 w-5" 
     )
 );
 
+// Electric Vehicle Icon
+const BatteryIcon: React.FC<{ className?: string }> = ({ className = "h-5 w-5" }) => (
+    React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", strokeWidth: 1.5, stroke: "currentColor", className: className },
+        React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", d: "M3.75 13.5v3.75a2.25 2.25 0 0 0 2.25 2.25h13.5a2.25 2.25 0 0 0 2.25-2.25v-3.75m0-3V8.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25v2.25m19.5 0a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25m19.5 0v3.75c0 .414-.336.75-.75.75H.75c-.414 0-.75-.336-.75-.75v-3.75m19.5 0a2.25 2.25 0 0 0 2.25-2.25V8.25m0 0H21a2.25 2.25 0 0 1 2.25 2.25v2.25" })
+    )
+);
+
+// Rocket Icon
+const RocketIcon: React.FC<{ className?: string }> = ({ className = "h-5 w-5" }) => (
+    React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", strokeWidth: 1.5, stroke: "currentColor", className: className },
+        React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 3v18m0-18c-3 0-4.5 1.5-4.5 4.5 0 3 1.5 6 4.5 9 3-3 4.5-6 4.5-9 0-3-1.5-4.5-4.5-4.5M6 19.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm12 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" })
+    )
+);
+
+// Brain/Neural Icon
+const BrainIcon: React.FC<{ className?: string }> = ({ className = "h-5 w-5" }) => (
+    React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", strokeWidth: 1.5, stroke: "currentColor", className: className },
+        React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", d: "M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5.432 9.75m0 0H15m0 0a2.25 2.25 0 1 0 0 4.5m0 0H5.432m9.568 0a2.25 2.25 0 1 1 0 4.5m0 0l-4.718 4.718a2.25 2.25 0 0 1-1.591.659h-7.5" })
+    )
+);
+
+// Sustainability/Leaf Icon
+const LeafIcon: React.FC<{ className?: string }> = ({ className = "h-5 w-5" }) => (
+    React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", strokeWidth: 1.5, stroke: "currentColor", className: className },
+        React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", d: "M14.828 14.828a4 4 0 1 0-5.656-5.656m5.656 5.656L9.172 9.172m5.656 5.656l1.414-1.414M9.172 9.172L7.758 7.758m0 11.314l1.414 1.414m0-11.314L6 8.586a2 2 0 0 0 0 2.828l5.656 5.656a2 2 0 0 0 2.828 0l5.656-5.656a2 2 0 0 0 0-2.828l-5.656-5.656" })
+    )
+);
+
+// Mars/Globe Icon
+const GlobeIcon: React.FC<{ className?: string }> = ({ className = "h-5 w-5" }) => (
+    React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", strokeWidth: 1.5, stroke: "currentColor", className: className },
+        React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zm0 0a8.968 8.968 0 0 0 5.5-1.901M12 21v-8.25m0 0a4.5 4.5 0 0 1 2.25-.75H15m-3 0a4.5 4.5 0 0 0-2.25.75M12 12.75h.008v.008H12v-.008z" })
+    )
+);
+
 
 export const NAV_LINKS: NavLink[] = [
     { name: 'About', href: '#about' },
@@ -91,60 +129,78 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const SKILLS: Skill[] = [
-    { name: 'Python', icon: React.createElement(PythonIcon, { className: "h-5 w-5" }) },
-    { name: 'Generative AI', icon: React.createElement(SparklesIcon, { className: "h-5 w-5" }) },
-    { name: 'RAG', icon: React.createElement(DocumentTextIcon, { className: "h-5 w-5" }) },
-    { name: 'Docker', icon: React.createElement(CubeIcon, { className: "h-5 w-5" }) },
-    { name: 'Langchain', icon: React.createElement(LinkIcon, { className: "h-5 w-5" }) },
-    { name: 'FastAPI', icon: React.createElement(BoltIcon, { className: "h-5 w-5" }) },
-    { name: 'Streamlit', icon: React.createElement(ChartBarIcon, { className: "h-5 w-5" }) },
-    { name: 'Tensorflow', icon: React.createElement(CpuChipIcon, { className: "h-5 w-5" }) },
-    { name: 'PyTorch', icon: React.createElement(CpuChipIcon, { className: "h-5 w-5" }) },
-    { name: 'Scikit-learn', icon: React.createElement(CpuChipIcon, { className: "h-5 w-5" }) },
-    { name: 'AWS', icon: React.createElement(CloudIcon, { className: "h-5 w-5" }) },
-    { name: 'GCP', icon: React.createElement(CloudIcon, { className: "h-5 w-5" }) },
-    { name: 'PostgreSQL', icon: React.createElement(CircleStackIcon, { className: "h-5 w-5" }) },
-    { name: 'Computer Vision', icon: React.createElement(EyeIcon, { className: "h-5 w-5" }) },
+    { name: 'Electric Vehicles', icon: React.createElement(BatteryIcon, { className: "h-5 w-5" }) },
+    { name: 'Space Technology', icon: React.createElement(RocketIcon, { className: "h-5 w-5" }) },
+    { name: 'Artificial Intelligence', icon: React.createElement(SparklesIcon, { className: "h-5 w-5" }) },
+    { name: 'Neural Interfaces', icon: React.createElement(BrainIcon, { className: "h-5 w-5" }) },
+    { name: 'Sustainable Energy', icon: React.createElement(LeafIcon, { className: "h-5 w-5" }) },
+    { name: 'Mars Colonization', icon: React.createElement(GlobeIcon, { className: "h-5 w-5" }) },
+    { name: 'Autonomous Systems', icon: React.createElement(CubeIcon, { className: "h-5 w-5" }) },
+    { name: 'Machine Learning', icon: React.createElement(CpuChipIcon, { className: "h-5 w-5" }) },
+    { name: 'Robotics', icon: React.createElement(LinkIcon, { className: "h-5 w-5" }) },
+    { name: 'Battery Technology', icon: React.createElement(BoltIcon, { className: "h-5 w-5" }) },
+    { name: 'Manufacturing', icon: React.createElement(CubeIcon, { className: "h-5 w-5" }) },
+    { name: 'Cloud Infrastructure', icon: React.createElement(CloudIcon, { className: "h-5 w-5" }) },
+    { name: 'Full-Stack Engineering', icon: React.createElement(CircleStackIcon, { className: "h-5 w-5" }) },
+    { name: 'Systems Design', icon: React.createElement(DocumentTextIcon, { className: "h-5 w-5" }) },
 ];
 
 export const EXPERIENCE: ExperienceItem[] = [
     {
-        company: 'NeoQubit',
-        companyUrl: 'https://neoqubit.io/',
-        role: 'AI Engineer',
-        duration: 'OCT 2024 — NOV 2025',
+        company: 'Tesla',
+        companyUrl: 'https://www.tesla.com/',
+        role: 'CEO & Chief Engineer',
+        duration: '2004 — Present',
         responsibilities: [
-            'Led development of NeoStack, an end-to-end HR platform using AI for resume parsing and candidate-job matching, featuring a responsive React TypeScript UI.',
-            'Engineered Bidkaizen, a customized LLM fine-tuned to understand proposal intents and craft tailored solutions aligned with industry best practices.',
-            'Built and maintained scalable AI models on cloud platforms like AWS, ensuring high availability and performance.'
+            'Led the design and development of the Cybertruck, Model S, Model 3, Model X, and Model Y, revolutionizing the EV market.',
+            'Scaled battery production and energy storage solutions, including Gigafactories across the globe to accelerate sustainable energy adoption.',
+            'Advanced autonomous driving technology and AI systems for full self-driving capabilities.'
         ]
     },
     {
-        company: 'Pirai Infotech',
-        companyUrl: 'https://www.piraiinfo.com/',
-        role: 'AI Engineer',
-        duration: 'FEB 2024 — AUG 2024',
+        company: 'SpaceX',
+        companyUrl: 'https://www.spacex.com/',
+        role: 'CEO & Chief Engineer',
+        duration: '2002 — Present',
         responsibilities: [
-            'Developed a Test Case Generator using a RAG architecture to automatically create test scenarios from business requirement documents.',
-            'Created Equiax, a customized RAG model for high-precision, structured data extraction in specialized domains like legal and finance.',
-            'Collaborated with cross-functional teams to integrate AI models into existing products, improving efficiency and functionality.'
+            'Designed and launched the Falcon 9, the first orbital-class reusable rocket, drastically reducing space access costs.',
+            'Developed the Starship for deep space exploration and human missions to Mars.',
+            'Built Starlink, a global satellite internet constellation serving millions of users worldwide.'
+        ]
+    },
+    {
+        company: 'xAI',
+        companyUrl: 'https://x.ai/',
+        role: 'Founder & CEO',
+        duration: '2023 — Present',
+        responsibilities: [
+            'Founded xAI to develop advanced AI systems that can accelerate human progress and help understand the nature of the universe.',
+            'Created Grok, a conversational AI designed to answer almost anything with a bit of humor and access to real-time information.',
+            'Focused on building safe, beneficial artificial general intelligence (AGI).'
         ]
     },
 ];
 
 export const PROJECTS: Project[] = [
      {
-        title: 'DeepPulse',
-        description: 'An intelligent, multi-agent research assistant powered by LangGraph and LangChain that conducts iterative web searches to provide comprehensive, well-cited answers with real-time streaming updates.',
-        tags: ['Chatbot', 'LLM', 'Generative AI', 'Python'],
-        imageUrl: deepPulseImg,
-        githubUrl: 'https://github.com/SajjadIsmail/DeepPulse'
+        title: 'Starship',
+        description: 'A fully reusable super heavy-lift launch vehicle designed for missions to Earth orbit, the Moon, Mars, and beyond. Starship is the most powerful rocket ever built and represents the next generation of space exploration technology.',
+        tags: ['Aerospace', 'Reusable Rockets', 'Mars Missions', 'Space Exploration'],
+        imageUrl: starshipImg,
+        githubUrl: 'https://github.com/TentacioPro'
     },
     {
-        title: 'Sky Marine Website',
-        description: 'Developed a responsive frontend for a company specializing in marine services, enhancing user engagement and providing detailed product information.',
-        tags: ['HTML', 'CSS', 'JavaScript'],
-        imageUrl: skyMarineImg,
-        githubUrl: 'https://github.com/SajjadIsmail/Sky-Marine-Services'
+        title: 'Tesla Cybertruck',
+        description: 'An exoskeleton-inspired electric pickup truck with ultra-hard stainless steel body, low production costs, and revolutionary design. The Cybertruck embodies the future of sustainable, durable, and powerful vehicles.',
+        tags: ['Electric Vehicles', 'Sustainable Energy', 'Innovation', 'Manufacturing'],
+        imageUrl: cybertruckImg,
+        githubUrl: 'https://github.com/TentacioPro'
+    },
+    {
+        title: 'Grok AI',
+        description: 'A large language model developed by xAI designed to answer almost anything with a bit of humor and access to real-time information. Grok aims to be a fun and useful conversational AI that can engage with complex topics.',
+        tags: ['AI', 'LLM', 'Generative AI', 'xAI'],
+        imageUrl: grokAIImg,
+        githubUrl: 'https://github.com/TentacioPro'
     }
 ];
